@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe "Viewing todo items" do
-	let!(:todo_list) { TodoList.create(title: "Grocery list", description: "Groceries.") }
+	let!(:todo_list) { TodoList.create(title: "Grocery list", description: "Groceries") }
 	
 	def visit_todo_list(list)
 		visit "/todo_lists"
-		within "#todo_list_#{todo_list.id}" do
+		within "#todo_list_#{list.id}" do
 			click_link "List Items"
 		end
 	end
@@ -18,6 +18,7 @@ describe "Viewing todo items" do
 	end
 
 	it "displays no items when a todo list is empty" do
+		visit_todo_list(todo_list)
 		expect(page.all("ul.todo_items li").size).to eq(0)
 	end
 
