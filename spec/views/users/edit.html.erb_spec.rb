@@ -5,8 +5,9 @@ RSpec.describe "users/edit", :type => :view do
     @user = assign(:user, User.create!(
       :first_name => "MyString",
       :last_name => "MyString",
-      :email => "MyString",
-      :password_digest => "MyString"
+      :email => "MyString@string.com",
+      :password => "MyString",
+      :password_confirmation => "MyString"
     ))
   end
 
@@ -25,3 +26,6 @@ RSpec.describe "users/edit", :type => :view do
     end
   end
 end
+
+
+# :password_digest => "MyString"

@@ -1,8 +1,17 @@
 class User < ActiveRecord::Base
+	has_secure_password
+
 	validates :email, presence: true,
-					  uniqueness: true
+					  uniqueness: true,
+					  format: {
+                    	with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9\.-]+\.[A-Za-z]+\Z/
+                  }
+					  
 
 	before_save :downcase_email
+
+	#virtual attributes
+	#attr_accessor :password, :password_confirmation
 
 	def downcase_email
 		self.email = email.downcase
