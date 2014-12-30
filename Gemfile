@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.0'
+gem 'bcrypt', '~> 3.1.7'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +23,11 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
 end
+
+
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7', require: "bcrypt"
 
 group :test do
 	gem 'capybara', '~> 2.4.4'
