@@ -1,4 +1,4 @@
-<h1><%= @todo_list.title %></h1>
+<h1 class="real-title"><%= @todo_list.title %></h1>
 
 <table class="todo_items">
 	
@@ -13,7 +13,7 @@
 	<tbody>
 
 		<% @todo_list.todo_items.each do |todo_item| %>
-		<tr id="<%= dom_id(todo_item) %>">
+		<tr class="test-row" id="<%= dom_id(todo_item) %>">
 			<td>
 				<% if todo_item.completed? %>
 					<%= todo_item.completed_at %>
@@ -22,7 +22,7 @@
 				<% end %>
 			</td>
 
-			<td><%= todo_item.content %></td>
+			<td class="item_content"><%= todo_item.content %></td>
 
 			<td>
 				
