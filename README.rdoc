@@ -1,3 +1,0 @@
-== README
-
-This is a Rails To Do List application, created to learn about Rails, RSpec and related technologies.
